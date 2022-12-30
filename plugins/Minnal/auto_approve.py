@@ -11,11 +11,11 @@ pr0fess0r_99=Client(
     api_hash = os.environ["API_HASH"]
 )
 
-CHAT_ID=int(os.environ.get("CHAT_ID", None))
+FILE_CHANNEL=int(os.environ.get("FILE_CHANNEL", None))
 TEXT=os.environ.get("APPROVED_WELCOME_TEXT", "ʜᴇʟʟᴏ {mention}\nᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ᴍʏ ᴄʜᴀɴɴᴇʟ.{title}\n\nᴏɴʟʏ ɴᴇᴡ ᴀɴᴅ ʟᴏᴡ ꜱɪᴢᴇ ᴍᴏᴠɪᴇ ᴀᴠᴀɪʟᴀʙʟᴇ. ᴇɴᴊᴏʏɪɴɢ🔥🔥")
 APPROVED = os.environ.get("APPROVED_WELCOME", "on").lower()
 
-@Client.on_chat_join_request(filters.chat(CHAT_ID))
+@Client.on_chat_join_request(filters.chat(FILE_CHANNEL))
 async def autoapprove(client: pr0fess0r_99, message: ChatJoinRequest):
     chat=message.chat # Chat
     user=message.from_user # User
