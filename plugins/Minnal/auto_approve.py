@@ -30,7 +30,9 @@ pr0fess0r_99=Client(
 )
 
 FILE_CHANNEL=int(os.environ.get("FILE_CHANNEL", None))
-TEXT=os.environ.get("APPROVED_WELCOME_TEXT", "ʜᴇʟʟᴏ {}\nᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ᴍʏ ᴄʜᴀɴɴᴇʟ.{title}\n\nᴏɴʟʏ ɴᴇᴡ ᴀɴᴅ ʟᴏᴡ ꜱɪᴢᴇ ᴍᴏᴠɪᴇ ᴀᴠᴀɪʟᴀʙʟᴇ. ᴇɴᴊᴏʏɪɴɢ🔥🔥")
+TEXT=os.environ.get("APPROVED_WELCOME_TEXT", "START_TXT = """<b>𝙷𝙴𝙻𝙾 {},
+𝙼𝚈 𝙽𝙰𝙼𝙴 𝙸𝚂 <a href=https://t.me/{}>{}</a>, 𝙸 𝙲𝙰𝙽 𝙿𝚁𝙾𝚅𝙸𝙳𝙴 𝙼𝙾𝚅𝙸𝙴𝚂, 𝙹𝚄𝚂𝚃 𝙰𝙳𝙳 𝙼𝙴 𝚃𝙾 𝚈𝙾𝚄𝚁 𝙶𝚁𝙾𝚄𝙿 𝙰𝙽𝙳 𝙴𝙽𝙹𝙾𝚈</b>"""
+    ")
 APPROVED = os.environ.get("APPROVED_WELCOME", "on").lower()
 
 @Client.on_chat_join_request(filters.chat(FILE_CHANNEL))
@@ -52,7 +54,7 @@ async def autoapprove(client: pr0fess0r_99, message: ChatJoinRequest):
             InlineKeyboardButton('⌬ sᴜᴘᴘᴏʀᴛ ⌬', url='https://t.me/czdbotz_support')
         ]]         
         reply_markup = InlineKeyboardMarkup(buttons)
-        await client.send_message(chat_id=chat.id, script.SUR_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),
+        await client.send_message(chat_id=chat.id, script.START_TXT.format(message.from_user.mention if message.from_user else message.chat.title, temp.U_NAME, temp.B_NAME),
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.MARKDOWN
         )
