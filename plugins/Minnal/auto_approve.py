@@ -52,7 +52,7 @@ async def autoapprove(client: pr0fess0r_99, message: ChatJoinRequest):
             InlineKeyboardButton('⌬ sᴜᴘᴘᴏʀᴛ ⌬', url='https://t.me/czdbotz_support')
         ]]         
         reply_markup = InlineKeyboardMarkup(buttons)
-        await client.send_message(chat_id=chat.id, text=Hello {message.from_user.mention} welcome to {message.chat.title} group),
+        await client.send_message(chat_id=chat.id, text=f"Hello {message.from_user.mention} welcome to {message.chat.title} group),
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
