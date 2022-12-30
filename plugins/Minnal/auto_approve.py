@@ -56,9 +56,9 @@ async def autoapprove(client: pr0fess0r_99, message: ChatJoinRequest):
             InlineKeyboardButton('⌬ sᴜᴘᴘᴏʀᴛ ⌬', url='https://t.me/czdbotz_support')
         ]]         
         reply_markup = InlineKeyboardMarkup(buttons)
-        await message.reply_video(
-            video=(MELCOW_VID),
-            caption=(script.MELCOW_ENG.format(u.mention, message.chat.title)),
+        await message.reply_text(
+            
+            text="Hai",
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
