@@ -19,7 +19,8 @@ async def addgfilter(client, message):
     args = message.text.html.split(None, 1)
 
     if len(args) < 2:
-        await message.reply_text("Command Incomplete :(", quote=True)
+        await message.reply_text("examble - [button 1](buttonurl://example.com)
+[button 2](buttonurl://example.com:same)", quote=True)
         return
 
     extracted = split_quotes(args[1])
