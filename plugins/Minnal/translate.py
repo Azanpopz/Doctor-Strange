@@ -6,7 +6,7 @@ from pyrogram.types import (
 )
 
 from plugins.helper.database import find , insert
-from plugins.helper.list import list
+from plugins.helpers.list import list
 
 @Client.on_message(filters.private & filters.command(['translation']))
 async def start(client, message):
