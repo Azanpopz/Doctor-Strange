@@ -257,34 +257,3 @@ async def translate_text(bot,update):
       
       
       
-      tr_text = update.message.reply_to_message.text
-      cb_data = update.data
-      if cb_data== "page2":
-      	await update.message.edit("Select language 👇",reply_markup = keybord2)
-      elif cb_data == "page1":
-      	await update.message.edit("Select language 👇",reply_markup =keybord1)
-      elif cb_data =="page3":
-      	await update.message.edit("Select language 👇",reply_markup =keybord3)
-      elif cb_data == "page4":
-      	await update.message.edit("Select language 👇",reply_markup =keybord4)
-      elif cb_data =="page5":
-      	await update.message.edit("Select language 👇",reply_markup =keybord5)
-      elif cb_data =="page6":
-      	await update.message.edit("Select language 👇",reply_markup =keybord6)
-      else :
-      		try:
-      			translator = Translator()
-      			translation = translator.translate(tr_text,dest = cb_data)
-      		except Exception as e:
-      			await update.message.edit(f"Error : {e}")
-      			return
-      		try:
-      			for i in list:
-      				if list[i]==translation.src:
-      					fromt = i
-      				if list[i] == translation.dest:
-      					to = i 
-      			await update.message.edit(f"Translated from **{fromt.capitalize()}** To **{to.capitalize()}**\n\n```{translation.text}```\n\n join @lntechnical")
-      		except Exception as e:
-      			await update.message.edit(f"Translated from **{translation.src}** To **{translation.dest}**\n\n```{translation.text}```\n\n join @lntechnical")
-      						
