@@ -36,5 +36,5 @@ python-math
 Pillow
 speedtest-cli
 
-###sticker
+#sticker
 python-telegram-bot==10.1.0
